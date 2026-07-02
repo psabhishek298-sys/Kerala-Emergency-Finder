@@ -20,8 +20,7 @@ type OverpassResponse = {
 };
 
 const OVERPASS_ENDPOINTS = [
-  "https://overpass-api.de/api/interpreter",
-  "https://overpass.kumi.systems/api/interpreter",
+  "/api/overpass",
 ] as const;
 
 const OVERPASS_TIMEOUT_MS = 20_000;
