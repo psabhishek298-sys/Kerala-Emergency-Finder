@@ -199,6 +199,53 @@ export function HomePage() {
               </p>
             </div>
 
+            {/* Mobile location permission banner */}
+            {!position && permissionState !== "denied" && (
+              <motion.div
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-5 flex items-center gap-4 rounded-[1.6rem] border border-[#d8e2ff] bg-white/80 p-4 shadow-sm backdrop-blur-sm"
+                initial={{ opacity: 0, y: 10 }}
+                transition={{ delay: 0.3, duration: 0.4 }}
+              >
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#eef2ff] text-[#0058bc]">
+                  <LocateFixed className="h-5 w-5" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-semibold text-slate-900">Enable Location Access</p>
+                  <p className="text-xs text-slate-500 mt-0.5">
+                    Allow location to find emergency services near you
+                  </p>
+                </div>
+                <button
+                  className="shrink-0 rounded-full bg-[#0058bc] px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[#0049a8] active:scale-95"
+                  onClick={requestLocation}
+                  type="button"
+                >
+                  Allow
+                </button>
+              </motion.div>
+            )}
+
+            {/* Location denied message */}
+            {permissionState === "denied" && !position && (
+              <motion.div
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-5 flex items-center gap-4 rounded-[1.6rem] border border-red-100 bg-red-50/80 p-4"
+                initial={{ opacity: 0, y: 10 }}
+                transition={{ delay: 0.3, duration: 0.4 }}
+              >
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-red-100 text-red-500">
+                  <LocateFixed className="h-5 w-5" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-semibold text-red-700">Location Access Denied</p>
+                  <p className="text-xs text-red-500 mt-0.5">
+                    Enable location in your browser settings, or search a place in Kerala below
+                  </p>
+                </div>
+              </motion.div>
+            )}
+
             <div className="mt-6 space-y-4">
               <SearchPanel
                 directMatches={directMatches}
