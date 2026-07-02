@@ -2,7 +2,7 @@ import { fetchText } from "@/lib/fetcher";
 import type { DisasterAlert } from "@/types";
 
 const KSDMA_URL = "https://sdma.kerala.gov.in/";
-const FALLBACK_PROXY = "https://api.allorigins.win/raw?url=";
+const FALLBACK_PROXY = "https://corsproxy.io/?";
 
 export async function fetchKeralaDisasterAlerts(): Promise<DisasterAlert[]> {
   try {

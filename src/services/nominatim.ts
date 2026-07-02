@@ -19,6 +19,7 @@ export async function searchKeralaLocations(
     limit: "8",
     bounded: "1",
     viewbox: `${KERALA_VIEWBOX.left},${KERALA_VIEWBOX.top},${KERALA_VIEWBOX.right},${KERALA_VIEWBOX.bottom}`,
+    email: "kerala.emergency.finder@gmail.com",
   });
 
   const url = `https://nominatim.openstreetmap.org/search?${params.toString()}`;

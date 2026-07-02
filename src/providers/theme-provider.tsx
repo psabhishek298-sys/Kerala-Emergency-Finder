@@ -14,9 +14,9 @@ export function ThemeProvider({ children }: PropsWithChildren) {
     if (stored === "light" || stored === "dark" || stored === "system") {
       return stored;
     }
-    return "system";
+    return "light";
   });
-  const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">(getSystemTheme());
+  const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-color-scheme: dark)");

@@ -13,7 +13,6 @@ import {
   ShieldCheck,
   Siren,
 } from "lucide-react";
-import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { CategoryFilterBar } from "@/components/home/category-filter-bar";
 import { DisasterAlertsCard } from "@/components/home/disaster-alerts-card";
 import { LazyMap } from "@/components/home/lazy-map";
@@ -118,7 +117,6 @@ export function HomePage() {
             <Search className="h-4 w-4 text-slate-400" />
             <span className="text-sm text-slate-400">Search services...</span>
           </div>
-          <ThemeToggle />
           <button
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/70 bg-white/70 text-slate-500 transition hover:text-[#0058bc]"
             onClick={requestLocation}
